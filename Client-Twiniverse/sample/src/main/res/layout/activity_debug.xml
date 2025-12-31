@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#222222">
+
+    <!-- IP 配置区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_ip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="IP Address"
+            android:text="117.68.10.96"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"/>
+
+        <EditText
+            android:id="@+id/et_port"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:hint="Port"
+            android:text="44539"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"/>
+
+        <Button
+            android:id="@+id/btn_save_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET IP"/>
+    </LinearLayout>
+
+    <!-- 功能按钮区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btn_test_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/btn_test_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Img->GLB"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/btn_test_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vid->GLB"/>
+    </LinearLayout>
+
+    <!-- 命令行日志输出 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Console Output:"
+        android:textColor="#00FF00"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:padding="5dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/tv_console"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="> Ready...\n"
+            android:textColor="#00FF00"
+            android:fontFamily="monospace"
+            android:textSize="12sp"/>
+    </ScrollView>
+
+</LinearLayout>

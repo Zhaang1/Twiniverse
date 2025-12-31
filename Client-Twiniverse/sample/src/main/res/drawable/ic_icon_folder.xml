@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 文件夹轮廓 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M20,6 h-8 l-2,-2 h-6 a2,2 0 0,0 -2,2 v14 a2,2 0 0,0 2,2 h16 a2,2 0 0,0 2,-2 v-12 a2,2 0 0,0 -2,-2 z" />
+
+    <!-- 文件夹中间的线条细节 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M2,11 h20" />
+</vector>

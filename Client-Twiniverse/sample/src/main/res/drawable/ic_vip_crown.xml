@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 金色: #FFD700 -->
+    <!--
+       路径解析:
+       M 3,18  : 移动到底座左下角
+       L 3,9   : 向上画一直线到左侧三角形顶点 (包含底座左侧和左三角形垂直边)
+       L 9,15  : 向下斜线到第一个谷底
+       L 12,9  : 向上斜线到中间等腰三角形顶点
+       L 15,15 : 向下斜线到第二个谷底
+       L 21,9  : 向上斜线到右侧三角形顶点
+       L 21,18 : 向下画一直线到底座右下角 (包含右三角形垂直边和底座右侧)
+       Z       : 闭合路径 (回到 3,18)
+    -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M3,21 L3,9 L9,15 L12,9 L15,15 L21,9 L21,21 Z" />
+</vector>

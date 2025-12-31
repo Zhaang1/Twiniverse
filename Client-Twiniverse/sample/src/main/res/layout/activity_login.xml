@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1115"
+    android:padding="24dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:layout_marginBottom="64dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="#1F1F1F">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="22dp"
+                    android:paddingTop="22dp"
+                    android:paddingEnd="22dp"
+                    android:paddingBottom="30dp">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="登录 Twiniverse"
+                        android:textColor="#DDDDDD"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:paddingBottom="12dp" />
+
+                    <!-- Account input group -->
+                    <FrameLayout
+                        android:id="@+id/flAccountContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/input_bg_default"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/tvAccountPlaceholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="账号"
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp"
+                            android:layout_gravity="center_vertical|start" />
+
+                        <EditText
+                            android:id="@+id/etAccount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:paddingLeft="0dp"
+                            android:paddingRight="0dp"
+                            android:gravity="center_vertical"
+                            android:inputType="text"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#9E9E9E"
+                            android:cursorVisible="true"
+                            android:textCursorDrawable="@drawable/cursor_drawable"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no" />
+                    </FrameLayout>
+
+                    <!-- Password -->
+                    <FrameLayout
+                        android:id="@+id/flPasswordContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="18dp"
+                        android:background="@drawable/input_bg_default"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/tvPasswordPlaceholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="密码"
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp"
+                            android:layout_gravity="center_vertical|start" />
+
+                        <EditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:paddingLeft="0dp"
+                            android:paddingRight="0dp"
+                            android:gravity="center_vertical"
+                            android:inputType="textPassword"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#9E9E9E"
+                            android:cursorVisible="true"
+                            android:textCursorDrawable="@drawable/cursor_drawable"
+                            android:imeOptions="actionDone"
+                            android:importantForAutofill="no" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp" />
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/login_button_bg"
+                        android:text="登录"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_alignParentBottom="true"
+                        android:max="100"
+                        android:progress="0"
+                        android:visibility="invisible"
+                        android:progressTint="#9E9E9E" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

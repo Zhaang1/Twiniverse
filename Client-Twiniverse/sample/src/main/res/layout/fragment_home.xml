@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1115"
+    android:padding="20dp">
+
+    <!-- 1. GLB文件名称栏 -->
+    <EditText
+        android:id="@+id/et_glb_name"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_home_input"
+        android:enabled="false"
+        android:ellipsize="end"
+        android:gravity="center_vertical|start"
+        android:hint="model_filename.glb"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingHorizontal="20dp"
+        android:text=""
+        android:textColor="#DDDDDD"
+        android:textColorHint="#555555"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btn_rename"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. 名称修改按钮 -->
+    <ImageButton
+        android:id="@+id/btn_rename"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_home_btn_normal"
+        android:contentDescription="Rename Model"
+        android:padding="14dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_icon_edit"
+        app:layout_constraintEnd_toStartOf="@+id/container_add_action"
+        app:layout_constraintTop_toTopOf="@+id/et_glb_name" />
+
+    <!-- 3. 新生成GLB文件按钮 (容器) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container_add_action"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:minHeight="56dp"
+        app:cardBackgroundColor="#1F1F1F"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 状态A: 默认加号 -->
+        <FrameLayout
+            android:id="@+id/content_add_normal"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="14dp"
+                android:src="@drawable/ic_icon_plus"
+                app:tint="#DDDDDD"/>
+        </FrameLayout>
+
+        <!-- 状态B: 第一层选择 (图片 vs 视频 vs 链接) -->
+        <LinearLayout
+            android:id="@+id/content_add_expanded"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="#2B6EF6">
+
+            <!-- 选项1：图片 -->
+            <ImageButton
+                android:id="@+id/btn_option_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:padding="14dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_icon_image"
+                app:tint="#DDDDDD" />
+
+            <View android:layout_width="match_parent" android:layout_height="1px" android:background="#DDDDDD" android:layout_marginHorizontal="8dp" android:alpha="0.3"/>
+
+            <!-- 选项2：视频 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageButton
+                    android:id="@+id/btn_option_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_icon_video"
+                    app:tint="#DDDDDD" />
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_vip_crown"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"/>
+            </FrameLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1px" android:background="#DDDDDD" android:layout_marginHorizontal="8dp" android:alpha="0.3"/>
+
+            <!-- 选项3：链接 -->
+            <ImageButton
+                android:id="@+id/btn_option_link"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:padding="14dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_icon_link"
+                app:tint="#DDDDDD" />
+
+        </LinearLayout>
+
+        <!-- 状态C: 第二层选择 (拍摄 vs 文件) -->
+        <LinearLayout
+            android:id="@+id/content_add_sub_options"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="#2B6EF6">
+
+            <ImageButton
+                android:id="@+id/btn_source_camera"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:padding="14dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_icon_camera"
+                app:tint="#DDDDDD" />
+
+            <View android:layout_width="match_parent" android:layout_height="1px" android:background="#DDDDDD" android:layout_marginHorizontal="8dp" android:alpha="0.3"/>
+
+            <ImageButton
+                android:id="@+id/btn_source_file"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:padding="14dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_icon_folder"
+                app:tint="#DDDDDD" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- 4. 展示GLB文件的展示框 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_webview_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="#0F1115"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_glb_name">
+
+        <!-- foreground 使用透明边框 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="@drawable/bg_webview_stroke"
+            android:padding="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <WebView
+                    android:id="@+id/web_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0F1115"/>
+            </RelativeLayout>
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

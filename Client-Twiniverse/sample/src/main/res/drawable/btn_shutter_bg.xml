@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 外环 -->
+    <item>
+        <shape android:shape="oval">
+            <stroke android:width="4dp" android:color="#FFFFFF"/>
+            <solid android:color="#00000000"/>
+            <size android:width="64dp" android:height="64dp"/>
+        </shape>
+    </item>
+    <!-- 内圆 (稍微小一点) -->
+    <item android:top="10dp" android:bottom="10dp" android:left="10dp" android:right="10dp">
+        <shape android:shape="oval">
+            <solid android:color="#FF0000"/>
+        </shape>
+    </item>
+</layer-list>

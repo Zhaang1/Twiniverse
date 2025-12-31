@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 专门用于 WebView 前景的边框，填充为透明，防止遮挡内容 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@android:color/transparent"/>
+    <stroke android:width="1dp" android:color="#1F1F1F"/>
+    <corners android:radius="14dp"/>
+</shape>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 自定义可缩放视频 View -->
+    <com.Zhaang1.Twiniverse.ZoomTextureView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- 中心播放按钮 -->
+    <ImageView
+        android:id="@+id/iv_play_center"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_play_circle_outline"
+        android:layout_gravity="center"
+        android:visibility="visible"/>
+
+    <!-- 底部控制栏 -->
+    <LinearLayout
+        android:id="@+id/ll_controls"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="#80000000"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/iv_play_pause"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_pause_small"/>
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:progressTint="#DDDDDD"
+            android:thumbTint="#DDDDDD"/>
+
+    </LinearLayout>
+
+</FrameLayout>

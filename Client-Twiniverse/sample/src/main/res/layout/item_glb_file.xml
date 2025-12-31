@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0F1115">
+
+    <!-- 主内容区域 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:paddingHorizontal="16dp"
+        android:background="?attr/selectableItemBackground"> <!-- 添加点击波纹 -->
+
+        <!-- 更多按钮 (三个点) - 先定义它，方便 ID 引用 -->
+        <ImageButton
+            android:id="@+id/btn_more"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_more_vert"
+            android:scaleType="center"
+            android:contentDescription="More options"/>
+
+        <!-- 文件名 - 修复对齐问题 -->
+        <TextView
+            android:id="@+id/tv_file_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/btn_more"
+            android:layout_marginEnd="8dp"
+            android:text="Model Name"
+            android:textColor="#DDDDDD"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <!-- 时间 - 保持左对齐 -->
+        <TextView
+            android:id="@+id/tv_file_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_file_name"
+            android:layout_marginTop="4dp"
+            android:layout_alignParentStart="true"
+            android:text="2025-10-10 15:30:00"
+            android:textColor="#DDDDDD"
+            android:textSize="12sp" />
+
+        <!-- 分割线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1F1F1F" />
+
+    </RelativeLayout>
+
+</FrameLayout>

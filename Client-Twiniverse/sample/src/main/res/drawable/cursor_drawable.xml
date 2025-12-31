@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 光标 drawable：使用与登录按钮相同的蓝色 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <size android:width="2dp"/>
+    <solid android:color="#2B6EF6"/>
+</shape>

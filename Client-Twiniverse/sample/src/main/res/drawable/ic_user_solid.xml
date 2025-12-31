@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!--
+       一体化设计：
+       头部：圆形 R=4, Center(12,7)
+       身体：流线型下垂，底部宽度约16
+    -->
+    <path
+        android:fillColor="#DDDDDD"
+        android:pathData="M12,3 C9.79,3 8,4.79 8,7 C8,8.86 9.26,10.41 10.95,10.86 C7.65,11.83 5,14.6 5,18 V21 H19 V18 C19,14.6 16.35,11.83 13.05,10.86 C14.74,10.41 16,8.86 16,7 C16,4.79 14.21,3 12,3 Z"/>
+</vector>

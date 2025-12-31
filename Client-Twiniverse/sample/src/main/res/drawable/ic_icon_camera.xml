@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 相机机身 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M4,8 h16 a2,2 0 0,1 2,2 v10 a2,2 0 0,1 -2,2 h-16 a2,2 0 0,1 -2,-2 v-10 a2,2 0 0,1 2,-2 z" />
+
+    <!-- 镜头圆环 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="2"
+        android:pathData="M12=,15 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+
+    <!-- 顶部快门/闪光灯区域 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M3,8 L5,5 H9 L11,8" />
+
+    <!-- 右上角小闪光灯点缀 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M19,11 h0.5" />
+</vector>

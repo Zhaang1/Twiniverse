@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 铅笔主体 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M14.06,6.02 l0.92,-0.92 a3.03,3.03 0 0,1 4.24,0 l0,0 a3.03,3.03 0 0,1 0,4.24 l-9.66,9.66 l-4.24,0 l0,-4.24 l9.66,-9.66 z" />
+    <!-- 下方横线 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M2,22 L22,22" />
+</vector>

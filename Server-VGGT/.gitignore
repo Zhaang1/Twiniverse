@@ -1,0 +1,20 @@
+# Local databases and outputs
+vggt_app.db
+out/
+outputs/
+input_images_*/
+
+# Model weights (provide download link or use LFS instead)
+model.pt
+
+# Caches / temp
+__pycache__/
+*.pyc
+.gradio/
+*.tmp
+*.log
+
+# Misc dev files
+111*.py
+tempCodeRunnerFile.py
+*.swp

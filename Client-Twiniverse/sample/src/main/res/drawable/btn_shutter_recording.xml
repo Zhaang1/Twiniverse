@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 外环 -->
+    <item>
+        <shape android:shape="oval">
+            <stroke android:width="4dp" android:color="#FFFFFF"/>
+            <solid android:color="#00000000"/>
+            <size android:width="72dp" android:height="72dp"/>
+        </shape>
+    </item>
+    <!-- 内方块 (圆角矩形模拟方块) -->
+    <item android:top="20dp" android:bottom="20dp" android:left="20dp" android:right="20dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FF0000"/>
+            <corners android:radius="4dp"/>
+        </shape>
+    </item>
+</layer-list>

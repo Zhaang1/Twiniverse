@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- 空心人形：原路径整体略内缩，保证1宽线条内描 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#DDDDDD"
+        android:strokeWidth="1"
+        android:strokeLineJoin="miter"
+        android:strokeLineCap="butt"
+        android:pathData="M12,3.5
+            C9.93,3.5 8.5,4.93 8.5,7
+            C8.5,8.7 9.66,10.16 11.15,10.58
+            C7.95,11.5 5.5,14.1 5.5,17.5
+            V20.5
+            H18.5
+            V17.5
+            C18.5,14.1 16.05,11.5 12.85,10.58
+            C14.34,10.16 15.5,8.7 15.5,7
+            C15.5,4.93 14.07,3.5 12,3.5
+            Z"/>
+</vector>

@@ -25,8 +25,9 @@
   -[gradle]
   -[README.md]
   -[LICENSE]
+```
 
-🚀 Getting Started
+## 🚀 Getting Started
 
 Prerequisites
 - Android Studio Koala or newer.
@@ -39,5 +40,5 @@ Installation
 4. Build and run on an Android device (Min SDK 24).
 5. Use the virtual environment (conda) to run the python code easily.
 
-📄 License
+## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.

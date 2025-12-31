@@ -22,7 +22,6 @@
 -[Twiniverse]
   -[Client-Twiniverse] (Android Client Source Code)
   -[Server-VGGT] (Python Backend & Algorithms)
-  -[gradle]
   -[README.md]
   -[LICENSE]
 ```

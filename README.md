@@ -38,6 +38,7 @@ Installation
 3. Configure CommunicationManager.java with your server IP.
 4. Build and run on an Android device (Min SDK 24).
 5. Use the virtual environment (conda) to run the python code easily.
+6. Run Manager.py to start the server,or Monitor.py to oversee system resources.
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.

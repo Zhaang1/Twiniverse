@@ -12,8 +12,8 @@
 
 ## 🛠 Tech Stack
 
-*   **Client **: Based on Android,with Java, CameraX, WebView (Babylon.js), Retrofit-like socket communication.
-*   **Server **: Based on python,with PyTorch (VGGT), SQLAlchemy, Socket.
+*   **Client**: Based on Android,with Java, CameraX, WebView (Babylon.js), Retrofit-like socket communication.
+*   **Server**: Based on python,with PyTorch (VGGT), SQLAlchemy, Socket.
 *   **Output Format**: GLB (glTF Binary) for standardized 3D assets.
 
 ## 📂 Project Structure

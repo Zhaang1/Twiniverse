@@ -7,6 +7,39 @@ This guide focuses exclusively on the backend components within this repository 
 -   **Hardware**: A GPU and CUDA drivers are required for inference. Ensure `model.pt` is placed in the repository root.
 -   **Installation**: Run `pip install -r requirements.txt` (Run `pip install -r requirements_demo.txt` if additional demo dependencies are needed).
 
+### 1.1 Download Pretrained Weights (`model.pt`)
+
+The backend inference code expects a **PyTorch checkpoint file** named **`model.pt`** placed in the **repository root** (same directory level as `Manager.py`). If the model file is missing or not found, inference will not start.
+
+You can obtain `model.pt` in either of the following ways:
+
+**Option A — Auto-download via `from_pretrained` (recommended)**
+This method uses Hugging Face caching and is the most reliable if your environment can access Hugging Face.
+
+```bash
+python - <<'PY'
+from vggt.models.vggt import VGGT
+# The first run will download weights and may take a while.
+VGGT.from_pretrained("facebook/VGGT-1B")
+print("Done: weights downloaded (Hugging Face cache).")
+PY
+```
+
+After the download completes, **copy the downloaded `model.pt` to the repository root** and ensure its name is exactly:
+
+```
+model.pt
+```
+
+**Option B — Manual download from Hugging Face**
+If auto-download is slow or blocked, manually download **`model.pt`** from the Hugging Face model page for `facebook/VGGT-1B`, then place it in the repository root and rename to `model.pt` if needed.
+
+**Option C — Commercial checkpoint**
+If your use case requires a commercial license, apply for access to the **`VGGT-1B-Commercial`** checkpoint on Hugging Face and download the corresponding `model.pt`. Replace the repository-root `model.pt` with the commercial checkpoint file.
+
+> Tip: Keep only one active checkpoint at a time (one `model.pt` in the repository root) to avoid confusion.
+
+
 ### 2. Initialize Database
 The backend utilizes SQLite (default path: `./vggt_app.db`, relative to the current working directory). **Ensure all operations are performed from the repository root.**
 
@@ -113,3 +146,38 @@ python export_glb.py --video_path "D:\PythonProjects\VGGT\1.mp4" --save_to_db --
 
 ### 8. License Notice
 The `LICENSE.txt` file in the repository root is the **VGGT License** (published by Meta), **not** the MIT License. Please read and adhere to its terms for commercial or demonstration use.
+
+### 9. Resource Monitoring Script (`Monitor.py`) (Optional)
+
+To help profile backend inference performance, we provide a lightweight monitoring script `Monitor.py`.
+
+**What it does**
+- Prompts you to enter the number of monitoring sessions `n` (recommended: 1–5).
+- For each session:
+  - Press **Enter** to **start** monitoring.
+  - Press **Enter** again to **stop** monitoring.
+- While monitoring is active, it samples the following resources every **0.1s**:
+  - **CPU utilization (%)**
+  - **GPU utilization (%)** *(NVIDIA only)*
+  - **VRAM usage (GB)** *(NVIDIA only)*
+  - **System RAM usage (GB)**
+
+After all sessions complete, it prints simple statistics and displays plots for each metric.
+
+**Dependencies**
+- Required: `psutil`, `matplotlib`, `numpy`
+- Optional (NVIDIA GPU metrics): `pynvml` (and an NVIDIA driver)
+
+If GPU is not NVIDIA or `pynvml` is not available, GPU/VRAM metrics will show as `0`.
+
+**How to run**
+From the repository root:
+
+```bash
+python Monitor.py
+```
+
+**Suggested usage**
+- Start `Manager.py` in one terminal.
+- Run `Monitor.py` in another terminal.
+- Start a monitoring session right before sending a video/image request, then stop it after inference finishes.

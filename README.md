@@ -37,7 +37,7 @@ Installation
 2. Open the Client-Twiniverse directory in Android Studio.
 3. Configure CommunicationManager.java with your server IP.
 4. Build and run on an Android device (Min SDK 24).
-5. Use the virtual environment (conda) to run the python code easily.
+5. Configure the python environment and download the model.pt files by referring to the VGGT-readme.
 6. Run Manager.py to start the server,or Monitor.py to oversee system resources.
 
 ## 📄 License
